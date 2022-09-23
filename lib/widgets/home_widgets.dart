@@ -1,3 +1,4 @@
+import 'package:drawer_ui_challege/route.dart';
 import 'package:flutter/material.dart';
 
 class MyHomeWidgets extends StatefulWidget {
@@ -20,6 +21,12 @@ class MyHomeWidgets extends StatefulWidget {
 
 class _MyHomeWidgetsState extends State<MyHomeWidgets> {
   int _counter = 0;
+  int _index_navigation = 0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -41,6 +48,21 @@ class _MyHomeWidgetsState extends State<MyHomeWidgets> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _index_navigation,
+        onTap: (selected) {
+          setState(() {
+            _index_navigation = selected;
+            Navigator.pushNamed(context,
+                selected == 0 ? MyRoute.homeRoute : MyRoute.secondRoute);
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.add_card), label: "second page"),
+        ],
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.

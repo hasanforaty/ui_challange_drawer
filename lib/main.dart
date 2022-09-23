@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       onGenerateRoute: MyRoute.generateRoute,
-      initialRoute: MyRoute.secondRoute,
+      initialRoute: MyRoute.homeRoute,
     );
   }
 }

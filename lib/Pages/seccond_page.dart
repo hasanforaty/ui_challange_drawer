@@ -33,7 +33,7 @@ class _SecondPageState extends State<SecondPage> with TickerProviderStateMixin {
                       ..rotateY((pi / 2 * (1 - animationController.value))),
                     alignment: Alignment.centerRight,
                     child: const MyDrawer(
-                      width: 300,
+                      width: 200,
                     )),
               ),
               Transform.translate(
