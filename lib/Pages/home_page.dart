@@ -23,7 +23,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           onTap: _toggle,
           child: Stack(
             children: [
-              MyDrawer(),
+              const MyDrawer(
+                width: double.infinity,
+              ),
               Transform(
                   transform: Matrix4.identity()
                     ..translate(side)
